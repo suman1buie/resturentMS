@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABC Resturent</title>
+    <style>
+      *,
+      body {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      .maindiv {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 style="text-align: center">Welcome To Our Resturent</h1>
+    {% for table in tables %}
+    <div class="maindiv">
+      <h3>table location :{{table.location}}</h3>
+      <h4>No of Shits:{{table.size}}</h4>
+      <p>Time : {{table.totalTime}} hr</p>
+      <!-- <p>{{table.is_booked}}</p> -->
+      <a href="/mainapp/form/{{table.pk}}">book it</a>
+    </div>
+    {% endfor %}
+  </body>
+</html>
